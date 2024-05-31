@@ -38,7 +38,6 @@
                 <li><a href="index.html" class="nav-link"><i class="bx bx-home"></i> <span>Home</span></a></li>
                 <li><a href="#about" class="nav-link scrollto active"><i class="bx bx-user"></i> <span>About</span></a>
                 </li>
-
             </ul>
         </nav><!-- .nav-menu -->
     </header><!-- End Header -->
@@ -50,74 +49,53 @@
                 <h2>Sobre</h2>
                 <p>ChatGank é uma ferramenta de comunicação e estratégia para jogadores que desejam coordenar suas
                     táticas de forma eficaz.</p>
-
             </div>
             <div class="row">
-
                 <div class="col-lg-8 pt-4 pt-lg-0 content">
                     <h3>Comunicação Estratégica</h3>
-                    <p class="fst-italic">
-                        Com o ChatGank, você pode:
-                    </p>
+                    <p class="fst-italic">Com o ChatGank, você pode:</p>
                     <ul>
                         <li>Coordenar emboscadas e ataques surpresa com sua equipe.</li>
                         <li>Compartilhar informações críticas durante as partidas.</li>
                         <li>Analisar o desempenho pós-jogo para melhorar continuamente.</li>
                     </ul>
-                    <p>
-                        Nosso aplicativo utiliza as APIs da Riot Games para fornecer dados em tempo real sobre suas
+                    <p>Nosso aplicativo utiliza as APIs da Riot Games para fornecer dados em tempo real sobre suas
                         partidas e estatísticas de jogo, permitindo que você tome decisões informadas e melhore sua
-                        estratégia.
-                    </p>
-
-
-
+                        estratégia.</p>
 
                     <h3>Descrição do Aplicativo</h3>
                     <p>O ChatGank é uma plataforma de comunicação projetada para jogadores que desejam coordenar
-                        estratégias e
-                        táticas de forma eficiente. Utilizando as APIs da Riot Games, nosso aplicativo oferece
-                        uma experiência
-                        integrada para análises de partidas e comunicação em tempo real.</p>
-
+                        estratégias e táticas de forma eficiente. Utilizando as APIs da Riot Games, nosso aplicativo
+                        oferece uma experiência integrada para análises de partidas e comunicação em tempo real.</p>
 
                     <h3>Funcionalidades</h3>
                     <ul>
                         <li>Chat em tempo real para comunicação rápida entre jogadores.</li>
-                        <li>Análise detalhada de partidas com base em dados fornecidos pelas APIs da Riot Games.
-                        </li>
+                        <li>Análise detalhada de partidas com base em dados fornecidos pelas APIs da Riot Games.</li>
                         <li>Recomendações de táticas baseadas no desempenho da equipe.</li>
                         <li>Comparação de estatísticas com outros jogadores e equipes.</li>
                     </ul>
                     <h3>Exemplos de Uso e Benefícios</h3>
-                    <p>Com o ChatGank, os jogadores podem rapidamente planejar emboscadas, compartilhar
-                        informações críticas durante
-                        uma partida e revisar o desempenho pós-jogo para melhorar continuamente.</p>
-
+                    <p>Com o ChatGank, os jogadores podem rapidamente planejar emboscadas, compartilhar informações
+                        críticas durante uma partida e revisar o desempenho pós-jogo para melhorar continuamente.</p>
 
                     <h3>Interface do Usuário</h3>
-                    <!-- <img src="screenshot1.png" alt="Captura de tela da interface do ChatGank">
-                            <img src="screenshot2.png" alt="Captura de tela da interface do ChatGank"> -->
-                    <p>Os usuários interagem com o ChatGank através de uma interface intuitiva e amigável,
-                        permitindo comunicação
-                        fluida e acesso rápido às análises de partidas.</p>
-
+                    <p>Os usuários interagem com o ChatGank através de uma interface intuitiva e amigável, permitindo
+                        comunicação fluida e acesso rápido às análises de partidas.</p>
 
                     <h3>Segurança e Privacidade</h3>
-                    <p>No ChatGank, a proteção dos dados dos usuários é uma prioridade. Utilizamos criptografia
-                        de ponta para
-                        proteger todas as comunicações e dados armazenados. Para mais informações, leia nossa <a
+                    <p>No ChatGank, a proteção dos dados dos usuários é uma prioridade. Utilizamos criptografia de ponta
+                        para proteger todas as comunicações e dados armazenados. Para mais informações, leia nossa <a
                             href="privacy.html">Política de Privacidade</a>.</p>
 
-
                     <h3>Equipe e Contatos</h3>
-                    <p>Desenvolvido por uma equipe apaixonada por jogos e tecnologia, o ChatGank é fruto da
-                        colaboração entre
-                        programadores, designers e estrategistas de jogos.</p>
+                    <p>Desenvolvido por uma equipe apaixonada por jogos e tecnologia, o ChatGank é fruto da colaboração
+                        entre programadores, designers e estrategistas de jogos.</p>
                     <p>Para suporte e perguntas, entre em contato conosco em: <a
                             href="mailto:support@chatgank.com">support@chatgank.com</a></p>
 
-
+                    <h3>Conteúdo do Arquivo riot.txt</h3>
+                    <pre id="riot-content"></pre>
                 </div>
             </div>
         </div>
@@ -138,6 +116,15 @@
 
     <!-- Template Main JS File -->
     <script src="assets/js/main.js"></script>
+
+    <script>
+        fetch('riot.txt')
+            .then(response => response.text())
+            .then(text => {
+                document.getElementById('riot-content').innerText = text;
+            })
+            .catch(error => console.error('Error fetching riot.txt:', error));
+    </script>
 
 </body>
 
